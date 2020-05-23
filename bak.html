@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>中国平安交通保险</title>
+	<meta content="" name="description" />
+	<meta content="" name="keywords" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/popup.css" rel="stylesheet" />
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?37c447141ab22aa63ef5954547d6abe9";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-105015892-1', 'auto');
+ga('send', 'pageview');
+</script>
+</head>
+<body>
+	<div class="banner">
+		<img src="images/banner.jpg" />
+	</div>
+
+	<div id="dft">
+		<form name="form" action="do.php" method="post">
+			<h2 class="title">
+				<span>小</span><span>调</span><span>查</span>
+			</h2>
+
+			<div class="faq">
+				<ol>
+					<li>
+						<h3>您是否有信用卡？</h3>
+						<dl class="clearfix" data-radio="iscredit">
+							<dd data-iscredit="1" class="active">
+								<span>有</span>
+							</dd>
+							<dd data-iscredit="0">
+								<span>无</span>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<h3>您的收入范围？</h3>
+						<dl class="clearfix" data-radio="income">
+							<dd data-income="5" class="active">
+								<span>1万以下</span>
+							</dd>
+							<dd data-income="6">
+								<span>1-2万</span>
+							</dd>
+							<dd data-income="7">
+								<span>2-5万</span>
+							</dd>
+							<dd data-income="8">
+								<span>5万以上</span>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<h3>您认为拥有什么样的保障最安全？</h3>
+						<dl class="clearfix" data-radio="instype">
+							<dd data-instype="1" class="active">
+								<span>意外保障</span>
+							</dd>
+							<dd data-instype="2">
+								<span>重疾保障</span>
+							</dd>
+							<dd data-instype="3" style="width:100%">
+								<span>锻炼身体保持健康</span>
+							</dd>
+						</dl>
+					</li>
+				</ol>
+			</div>
+
+			<div class="info">
+				<h3>填写信息领取赠险礼品</h3>
+				<ul class="list-unstyled">
+					<li class="sex">
+						<label>姓名</label>
+						<input type="text" name="info[realname]" value="" placeholder="请输入姓名" class="text" data-require="请输入姓名" />
+						<dl data-radio="sex">
+							<dd class="active" data-sex="1">男</dd>
+							<dd data-sex="0">女</dd>
+						</p>
+					</li>
+					<li>
+						<label>生日</label>
+						<input type="text" name="info[birthday]" value="" placeholder="选择" class="text" data-require="请选择生日" readonly="readonly" data-dtpicker data-options='{"type":"date", "beginYear":1960, "endYear":2010}' />
+					</li>
+					<li>
+						<label>手机</label>
+						<input type="tel" name="info[mobile]" value="" placeholder="请输入手机号码" class="text" data-require="请输入手机号码" />
+					</li>
+					<li class="access">
+						<label>
+							<input type="checkbox" name="access" value="1" checked="checked" />
+							我同意中国平安致电确认免费保障生效事宜及保险咨询
+						</label>
+					</li>
+
+					<li>
+						<input type="hidden" name="dosubmit" value="1" />
+						<a href="javascript:void(0);" data-form="form" class="btn">
+							<img src="images/btn.png" />
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="promise">
+				<span>*</span><b>郑重承诺：</b>您的个人信息将被严格保密
+			</div>
+
+			<input type="hidden" name="info[iscredit]" value="1" data-require="" />
+			<input type="hidden" name="info[income]" value="5" data-require="" />
+			<input type="hidden" name="info[instype]" value="1" data-require="" />
+			<input type="hidden" name="info[sex]" value="1" data-require="" />
+
+			<input type="hidden" name="track" id="track" value="" />
+		</form>
+	</div>
+
+<script src="js/zepto.js"></script>
+<script>
+function getQueryString(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) return unescape(r[2]); return null;
+}
+
+function setCookie(name, value) {
+	var Days = 30;
+	var exp = new Date();
+	exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+	document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+function getCookie(name) {
+	var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+	if (arr = document.cookie.match(reg)) {
+		return unescape(arr[2]);
+	} else {
+		return null;
+	}
+}
+
+!function($) {
+	$('#track').val(getQueryString('track'));
+
+	if ('ontouchstart' in window) {
+		$.isTouchable = true;
+		$.EVENT_START = 'touchstart';
+		$.EVENT_MOVE = 'touchmove';
+		$.EVENT_END = 'touchend';
+	} else {
+		$.isTouchable = false;
+		$.EVENT_START = 'mousedown';
+		$.EVENT_MOVE = 'mousemove';
+		$.EVENT_END = 'mouseup';
+	}
+
+	$.EVENT_CANCEL = 'touchcancel';
+	$.EVENT_CLICK = 'click';
+
+	var popupStack = [];
+	var backdrop = (function() {
+		var element = document.createElement('div');
+		element.classList.add('ui-popup-backdrop');
+		element.addEventListener($.EVENT_MOVE, $.preventDefault);
+		element.addEventListener('webkitTransitionEnd', function() {
+			if (!this.classList.contains('ui-active')) {
+				element.parentNode && element.parentNode.removeChild(element);
+			}
+		});
+		return element;
+	}());
+
+	var createPopup = function(html, callback) {
+		var popupElement = document.createElement('div');
+		popupElement.className = "ui-popup";
+		popupElement.innerHTML = html;
+		var removePopupElement = function() {
+			popupElement.parentNode && popupElement.parentNode.removeChild(popupElement);
+			popupElement = null;
+		};
+		popupElement.addEventListener($.EVENT_MOVE, $.preventDefault);
+		popupElement.addEventListener('webkitTransitionEnd', function(e) {
+			if (popupElement && e.target === popupElement && popupElement.classList.contains('ui-popup-out')) {
+				removePopupElement();
+			}
+		});
+		popupElement.style.display = 'block';
+		document.body.appendChild(popupElement);
+		popupElement.offsetHeight;
+		popupElement.classList.add('ui-popup-in');
+
+		if (!backdrop.classList.contains('ui-active')) {
+			backdrop.style.display = 'block';
+			document.body.appendChild(backdrop);
+			backdrop.offsetHeight;
+			backdrop.classList.add('ui-active');
+		}
+		var btns = $('.ui-popup-buttons', popupElement);
+		var input = popupElement.querySelector('.ui-popup-input input');
+		var popup = {
+			element: popupElement,
+			close: function(index, animate) {
+				if (popupElement) {
+					callback && callback({
+						index: index || 0,
+						value: input && input.value || ''
+					});
+					if (animate !== false) {
+						popupElement.classList.remove('ui-popup-in');
+						popupElement.classList.add('ui-popup-out');
+					} else {
+						removePopupElement();
+					}
+					popupStack.pop();
+					//如果还有其他popup，则不remove backdrop
+					if (popupStack.length) {
+						popupStack[popupStack.length - 1]['show'](animate);
+					} else {
+						backdrop.classList.remove('ui-active');
+					}
+				}
+			}
+		};
+		$(popupElement).on($.EVENT_CLICK, '.ui-popup-button', function(e) {
+			popup.close($(this).index());
+		});
+		if (popupStack.length) {
+			popupStack[popupStack.length - 1]['hide']();
+		}
+		popupStack.push({
+			close: popup.close,
+			show: function(animate) {
+				popupElement.style.display = 'block';
+				popupElement.offsetHeight;
+				popupElement.classList.add('ui-popup-in');
+			},
+			hide: function() {
+				popupElement.style.display = 'none';
+				popupElement.classList.remove('ui-popup-in');
+			}
+		});
+		return popup;
+	};
+	var createInput = function(placeholder) {
+		return '<div class=".ui-popup-input"><input type="text" autofocus placeholder="' + (placeholder || '') + '"/></div>';
+	};
+	var createInner = function(message, title, extra) {
+		return '<div class="ui-popup-inner"><div class="ui-popup-title">' + title + '</div><div class="ui-popup-text">' + message.replace(/\r\n/g, "<br/>").replace(/\n/g, "<br/>") + '</div>' + (extra || '') + '</div>';
+	};
+	var createButtons = function(btnArray) {
+		var length = btnArray.length;
+		var btns = [];
+		for (var i = 0; i < length; i++) {
+			btns.push('<span class="ui-popup-button' + (i === length - 1 ? (' ui-popup-button-bold') : '') + '">' + btnArray[i] + '</span>');
+		}
+		return '<div class="ui-popup-buttons">' + btns.join('') + '</div>';
+	};
+
+	$.fn.alert = $.alert = function(message, title, btnValue, callback, type) {
+		if (typeof message === 'undefined') {
+			return;
+		} else {
+			if (typeof title === 'function') {
+				callback = title;
+				type = btnValue;
+				title = null;
+				btnValue = null;
+			} else if (typeof btnValue === 'function') {
+				type = callback;
+				callback = btnValue;
+				btnValue = null;
+			}
+		}
+		return createPopup(createInner(message, title || '提示') + createButtons([btnValue || '确定']), callback);
+	};
+
+	$.fn.confirm = $.confirm = function(message, title, btnArray, callback, type) {
+		if (typeof message === 'undefined') {
+			return;
+		} else {
+			if (typeof title === 'function') {
+				callback = title;
+				type = btnArray;
+				title = null;
+				btnArray = null;
+			} else if (typeof btnArray === 'function') {
+				type = callback;
+				callback = btnArray;
+				btnArray = null;
+			}
+		}
+		return createPopup(createInner(message, title || '提示') + createButtons(btnArray || ['取消', '确认']), callback);
+	};
+
+	$.fn.prompt = $.prompt = function(message, placeholder, title, btnArray, callback, type) {
+		if (typeof message === 'undefined') {
+			return;
+		} else {
+			if (typeof placeholder === 'function') {
+				callback = placeholder;
+				type = title;
+				placeholder = null;
+				title = null;
+				btnArray = null;
+			} else if (typeof title === 'function') {
+				callback = title;
+				type = btnArray;
+				title = null;
+				btnArray = null;
+			} else if (typeof btnArray === 'function') {
+				type = callback;
+				callback = btnArray;
+				btnArray = null;
+			}
+		}
+		return createPopup(createInner(message, title || '提示', createInput(placeholder)) + createButtons(btnArray || ['取消', '确认']), callback);
+	};
+
+	$.fn.closepopup = $.closepopup = function(){
+		if (popupStack.length) {
+			popupStack[popupStack.length - 1]['close']();
+			return true;
+		} else {
+			return false;
+		}
+	};
+	$.fn.closepopups = $.closepopups = function(){
+		while (popupStack.length) {
+			popupStack[popupStack.length - 1]['close']();
+		}
+	};
+
+}(window.Zepto);
+
+$(function(){
+	function validate(obj) {
+		var status = true;
+		if (status) {
+			$('[data-require]', obj).each(function(){
+				if ($(this).val() == '') {
+					$.alert($(this).data('require'));
+					status = false;
+					return false;
+				}
+			});
+		}
+
+		return status;
+	}
+
+	$('[data-form]').on($.EVENT_CLICK, function(e) {
+		var $this = $('form[name=' + $(this).data('form') + ']');
+		var $btn = $(this);
+		var data = $this.serialize();
+		if (!validate($this) || $btn.prop('disabled')) return false;
+
+		$btn.prop('disabled', true);
+		$.ajax({
+			url: $this.attr('action'),
+			type: 'POST',
+			dataType: 'json',
+			data: data,
+			success: function(data) {
+				if (data.retCode == 1) {
+					if (data.retUrl) window.location.href = data.retUrl;
+					if (data.retDesc) $.alert(data.retDesc);
+				} else {
+					$.alert(data.retDesc);
+				}
+				$btn.prop('disabled', false);
+			},
+			error: function() {
+				$btn.prop('disabled', false);
+			}
+		});
+	});
+});
+
+$(function(){
+	$('[data-radio]').each(function(){
+		var $this = $(this);
+		$('dd', $this).click(function(){
+			var _name = $this.data('radio');
+			$(this).addClass('active').siblings().removeClass('active');
+			$('[name="info[' + _name + ']"]').val($(this).data(_name));
+		});
+	});
+});
+
+//获取验证码
+$(function(){
+	var time = 60;
+	var countdown = function(obj){
+		if (time == 0) {
+			obj.prop('disabled', '');
+			obj.text('重新发送');
+			time = 60;
+		} else {
+			obj.prop('disabled', 'disabled');
+			obj.text("(" + time + "s)");
+			time--;
+			setTimeout(function() {
+				countdown(obj)
+			}, 1000)
+		}
+	};
+
+	$('button[name=getcode]').on($.EVENT_CLICK, function(){
+		var mobile = $('[name="info[mobile]"]');
+        var $this = $(this);
+		if ($this.prop('disabled')) return false;
+		if (!mobile.val()) {
+			$.PageDialog.fail('请输入手机号码');
+        } else {
+            $.post('getsms.php', {'mobile': mobile.val()}, function(data){
+                if(data.retCode == 1) {
+                    countdown($this);
+                } else {
+					$.PageDialog.ok(data.retDesc);
+                }
+            }, 'json');
+        }
+	})
+});
+</script>
+
+<link href="css/picker.css" rel="stylesheet" />
+<script src="js/dtpicker.js"></script>
+<script src="js/picker.js"></script>
+<script>
+$(function(){
+	$('[data-dtpicker]').each(function(){
+		var me = $(this);
+		me.on($.EVENT_CLICK, function(){
+			var options = me.data('options') || {};
+			var picker = new $.DtPicker(options);
+			picker.show(function(rs) {
+				me.val(rs.text);
+				picker.dispose();
+			});
+		})
+	})
+});
+</script>
+<div style="display:none">
+	<script src="http://s4.cnzz.com/stat.php?id=1260977035&web_id=1260977035" language="JavaScript"></script>
+</div>
+</body>
+</html>

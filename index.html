@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>中国平安交通保险</title>
+	<meta content="" name="description" />
+	<meta content="" name="keywords" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/popup.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="banner">
+		<img src="images/banner.jpg" />
+	</div>
+
+	<div id="dft">
+		<form name="form" action="do.php" method="post">
+			<h2 class="title">
+				<span>小</span><span>调</span><span>查</span>
+			</h2>
+			
+			<div class="faq">
+				<ol>
+					<li>
+						<h3>您是否有信用卡？</h3>
+						<dl class="clearfix">
+							<dd data-iscredit="1" class="active">
+								<span>有</span>
+							</dd>
+							<dd data-iscredit="0">
+								<span>无</span>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<h3>您的收入范围？</h3>
+						<dl class="clearfix">
+							<dd data-income="5" class="active">
+								<span>1万以下</span>
+							</dd>
+							<dd data-income="6">
+								<span>1-2万</span>
+							</dd>
+							<dd data-income="7">
+								<span>2-5万</span>
+							</dd>
+							<dd data-income="8">
+								<span>5万以上</span>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<h3>您认为拥有什么样的保障最安全？</h3>
+						<dl class="clearfix">
+							<dd data-instype="1" class="active">
+								<span>意外保障</span>
+							</dd>
+							<dd data-instype="2">
+								<span>重疾保障</span>
+							</dd>
+							<dd data-instype="3" style="width:100%">
+								<span>锻炼身体保持健康</span>
+							</dd>
+						</dl>
+					</li>
+				</ol>
+			</div>
+			
+			<div class="info">
+				<h3>填写信息领取赠险礼品</h3>
+				<ul class="list-unstyled">
+					<li class="gender">
+						<label>姓名</label>
+						<input type="text" name="info[realname]" value="" placeholder="请输入姓名" class="text" data-require="请输入姓名" />
+						<p>
+							<span class="active" data-gender="1">男</span>
+							<span data-gender="2">女</span>
+						</p>
+					</li>
+					<li>
+						<label>生日</label>
+						<input type="text" name="info[birthday]" value="" placeholder="28~50周岁" class="text" data-require="请选择生日" readonly="readonly" data-dtpicker data-options='{"type":"date", "beginYear":1960, "endYear":2010}' />
+					</li>
+					<li>
+						<label>手机</label>
+						<input type="tel" name="info[mobile]" value="" placeholder="请输入手机号码" class="text" data-require="请输入手机号码" />
+					</li>
+					<li>
+						<label>城市</label>
+						<input id="chose"  name="info[city]" class="text" placeholder="请选择城市" value="" readonly="readonly" data-require="请选择城市" />
+					</li>
+					<li class="access">
+						<label>
+							<input type="checkbox" name="access" value="1" />
+							我同意中国平安致电确认免费保障生效事宜及保险咨询
+						</label>
+					</li>
+					
+					<li>
+						<input type="hidden" name="dosubmit" value="1" />
+						<a href="javascript:void(0);" data-form="form" class="btn">
+							<img src="images/btn.png" />
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="promise">
+				<span>*</span><b>郑重承诺：</b>您的个人信息将被严格保密
+			</div>
+
+			<input type="hidden" name="info[iscredit]" value="1" data-require="" />
+			<input type="hidden" name="info[income]" value="5" data-require="" />
+			<input type="hidden" name="info[instype]" value="1" data-require="" />
+			<input type="hidden" name="info[sex]" value="1" data-require="" />
+			
+			<input type="hidden" name="track" id="track" value="" />
+		</form>
+		
+		
+		<div class="intro">
+			<ul class="J_tab">
+				<li class="li_first active">投保须知</li>
+				<li class="">产品责任或条款</li>
+				<li class="">产品Q&amp;A</li>
+			</ul>
+			<div class="active" style="display: block;">
+				<p>1、每一客户受赠平安出行保险以1份为限。保险对象为28-50周岁，身体健康、能正常工作和劳动。</p>
+				<p>2、本保险仅提供电子保单，仅限赠送。保单生效后客户会自动收到短信通知,您也可以通过<a href="http://shop.pingan.com/baoxianka/baoxiankagoumai.shtml" title="平安官网自助平台" target="_blank"><span>平安官网自助卡平台</span></a>及<a href="http://property.pingan.com/kehufuwu/fuwugongju/chexianchengbaolipeichaxun.shtml" title="平安保单信息" target="_blank"><span>平安保单信息</span></a>查询功能查询您的保单信息。</p>
+				<p>3、投保成功后，请将短信保存并将短信上的电子保单号记录在适当的位置，以方便查询及理赔。</p>
+			</div>
+			<div style="display: none;">
+				<p class="intro_second">在保险期间内，承担被保险人在乘坐商业运营的飞机、火车、地铁、轻轨、轮船、汽车、出租车期间因遭受意外伤害事故所导致的身故、残疾责任；飞机意外保额100万元；火车/地铁/轻轨意外保额50万元，轮船意外保额50万元；汽车意外保额10万元；交通意外伤害医疗责任（保额为2万元，免赔100元后按90%赔付）；承担被保险人在旅行时的行李物品和旅行证件损失责任限额500元；</p>
+			</div>
+			<div class="intro_third" style="display: none;">
+				<p><i>保险对象</i>28-50周岁，身体健康、能正常工作和生活。</p>
+				<p><i>保险期限</i>本保险的保障期限为180天，以被保险人收到短信通知上的保险起止日期为准。对保险起至日期之外所发生的保险事故本公司不负给付保险金责任。</p>
+				<p><i>适用条款</i>本赠险条款详情可点击查看<a href="http://images.vrm.cn/2017/03/03/平安交通工具意外伤害保险条款.pdf" title="中国平安" target="_blank">《平安交通工具意外伤害保险条款》</a>、<a href="http://images.vrm.cn/2017/03/03/平安旅行附加行李物品和旅行证件损失保险条款.pdf" title="中国平安" target="_blank">《平安旅行附加行李物品和旅行证件损失保险条款》</a>，详细内容请登陆<br><a href="http://www.pingan.com" title="中国平安" target="_blank"><span>www.pingan.com</span></a>网站查询。</p>
+				<p><i>告知义务</i>依据我国《保险法》的规定，投保人、被保险人应如实告知，否则保险人有权依法解除保险合同，并对于保险合同解除前发生的保险事故不负任何责任。投保人、被保险人在投保时，应对投保书内各项内容如实详细地说明或填写清楚。否则，保险人有权依法解除保险合同。</p>
+				<p><i>保险凭证</i>平安人寿保险公司对畅行天下升级版保险仅提供电子保单。</p>
+			</div>
+			
+			<style>
+
+.intro {
+	position: relative;
+	width: 100%;
+	margin: 0 auto 10px;
+	background-color: #fff
+}
+
+.intro ul {
+	position: absolute;
+	top: -12px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	font-size: 0;
+}
+
+.intro ul li {
+	display: inline-block;
+	width: 90px;
+	margin: 0 2px;
+	height: 34px;
+	line-height: 25px;
+	text-align: center;
+	vertical-align: top;
+	cursor: pointer;
+	background: url(images/2015631104331_3_pc_qa.png) -90px 0 no-repeat;
+	background-size: 180px auto;
+	font-size: 12px;
+}
+
+.intro ul li.active {
+	background-position: 0 0;
+	border: 0;
+	color: #fff
+}
+
+.intro div {
+	display: none;
+	width: 90%;
+	margin: 30px auto 0;
+	padding: 35px 23px 35px;
+	border: 1px solid #737373;
+	border-radius: 10px
+}
+
+.intro div p {
+	padding-top: 13px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid #e5e5e5;
+	color: #101010;
+	line-height: 27px;
+}
+
+.intro div p span,.intro div p a {
+	color: #fc673d;
+	text-decoration: underline
+}
+
+.intro div p.intro_second {
+	padding-left: 10px;
+	padding-right: 15px;
+	border-bottom: 0;
+	text-indent: 0
+}
+
+.intro div i {
+	font-weight: bold;
+	font-style: normal;
+	padding-right: 25px
+}
+
+.intro div.intro_third p {
+	color: #51372d
+}
+
+.intro div.active {
+	display: block
+}
+			</style>
+		</div>
+	</div>
+	
+<script src="js/zepto.js"></script>
+<script>
+$(function(){
+	$('.J_tab li').click(function(){
+		var i = $(this).index();
+		$(this).addClass('active').siblings().removeClass('active');
+		$('.intro div').hide().eq(i).show();
+	});
+});
+</script>
+
+<script>
+function getQueryString(name) { 
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+	var r = window.location.search.substr(1).match(reg); 
+	if (r != null) return unescape(r[2]); return null; 
+}
+
+function setCookie(name, value) {
+	var Days = 30;
+	var exp = new Date();
+	exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+	document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+function getCookie(name) {
+	var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+	if (arr = document.cookie.match(reg)) {
+		return unescape(arr[2]);
+	} else {
+		return null;
+	}
+}
+
+!function($) {
+	$('#track').val(getQueryString('track'));
+	
+	if ('ontouchstart' in window) {
+		$.isTouchable = true;
+		$.EVENT_START = 'touchstart';
+		$.EVENT_MOVE = 'touchmove';
+		$.EVENT_END = 'touchend';
+	} else {
+		$.isTouchable = false;
+		$.EVENT_START = 'mousedown';
+		$.EVENT_MOVE = 'mousemove';
+		$.EVENT_END = 'mouseup';
+	}
+
+	$.EVENT_CANCEL = 'touchcancel';
+	$.EVENT_CLICK = 'click';
+
+	var popupStack = [];
+	var backdrop = (function() {
+		var element = document.createElement('div');
+		element.classList.add('ui-popup-backdrop');
+		element.addEventListener($.EVENT_MOVE, $.preventDefault);
+		element.addEventListener('webkitTransitionEnd', function() {
+			if (!this.classList.contains('ui-active')) {
+				element.parentNode && element.parentNode.removeChild(element);
+			}
+		});
+		return element;
+	}());
+
+	var createPopup = function(html, callback) {
+		var popupElement = document.createElement('div');
+		popupElement.className = "ui-popup";
+		popupElement.innerHTML = html;
+		var removePopupElement = function() {
+			popupElement.parentNode && popupElement.parentNode.removeChild(popupElement);
+			popupElement = null;
+		};
+		popupElement.addEventListener($.EVENT_MOVE, $.preventDefault);
+		popupElement.addEventListener('webkitTransitionEnd', function(e) {
+			if (popupElement && e.target === popupElement && popupElement.classList.contains('ui-popup-out')) {
+				removePopupElement();
+			}
+		});
+		popupElement.style.display = 'block';
+		document.body.appendChild(popupElement);
+		popupElement.offsetHeight;
+		popupElement.classList.add('ui-popup-in');
+
+		if (!backdrop.classList.contains('ui-active')) {
+			backdrop.style.display = 'block';
+			document.body.appendChild(backdrop);
+			backdrop.offsetHeight;
+			backdrop.classList.add('ui-active');
+		}
+		var btns = $('.ui-popup-buttons', popupElement);
+		var input = popupElement.querySelector('.ui-popup-input input');
+		var popup = {
+			element: popupElement,
+			close: function(index, animate) {
+				if (popupElement) {
+					callback && callback({
+						index: index || 0,
+						value: input && input.value || ''
+					});
+					if (animate !== false) {
+						popupElement.classList.remove('ui-popup-in');
+						popupElement.classList.add('ui-popup-out');
+					} else {
+						removePopupElement();
+					}
+					popupStack.pop();
+					//如果还有其他popup，则不remove backdrop
+					if (popupStack.length) {
+						popupStack[popupStack.length - 1]['show'](animate);
+					} else {
+						backdrop.classList.remove('ui-active');
+					}
+				}
+			}
+		};
+		$(popupElement).on($.EVENT_CLICK, '.ui-popup-button', function(e) {
+			popup.close($(this).index());
+		});
+		if (popupStack.length) {
+			popupStack[popupStack.length - 1]['hide']();
+		}
+		popupStack.push({
+			close: popup.close,
+			show: function(animate) {
+				popupElement.style.display = 'block';
+				popupElement.offsetHeight;
+				popupElement.classList.add('ui-popup-in');
+			},
+			hide: function() {
+				popupElement.style.display = 'none';
+				popupElement.classList.remove('ui-popup-in');
+			}
+		});
+		return popup;
+	};
+	var createInput = function(placeholder) {
+		return '<div class=".ui-popup-input"><input type="text" autofocus placeholder="' + (placeholder || '') + '"/></div>';
+	};
+	var createInner = function(message, title, extra) {
+		return '<div class="ui-popup-inner"><div class="ui-popup-title">' + title + '</div><div class="ui-popup-text">' + message.replace(/\r\n/g, "<br/>").replace(/\n/g, "<br/>") + '</div>' + (extra || '') + '</div>';
+	};
+	var createButtons = function(btnArray) {
+		var length = btnArray.length;
+		var btns = [];
+		for (var i = 0; i < length; i++) {
+			btns.push('<span class="ui-popup-button' + (i === length - 1 ? (' ui-popup-button-bold') : '') + '">' + btnArray[i] + '</span>');
+		}
+		return '<div class="ui-popup-buttons">' + btns.join('') + '</div>';
+	};
+
+	$.fn.alert = $.alert = function(message, title, btnValue, callback, type) {
+		if (typeof message === 'undefined') {
+			return;
+		} else {
+			if (typeof title === 'function') {
+				callback = title;
+				type = btnValue;
+				title = null;
+				btnValue = null;
+			} else if (typeof btnValue === 'function') {
+				type = callback;
+				callback = btnValue;
+				btnValue = null;
+			}
+		}
+		return createPopup(createInner(message, title || '提示') + createButtons([btnValue || '确定']), callback);
+	};
+
+	$.fn.confirm = $.confirm = function(message, title, btnArray, callback, type) {
+		if (typeof message === 'undefined') {
+			return;
+		} else {
+			if (typeof title === 'function') {
+				callback = title;
+				type = btnArray;
+				title = null;
+				btnArray = null;
+			} else if (typeof btnArray === 'function') {
+				type = callback;
+				callback = btnArray;
+				btnArray = null;
+			}
+		}
+		return createPopup(createInner(message, title || '提示') + createButtons(btnArray || ['取消', '确认']), callback);
+	};
+
+	$.fn.prompt = $.prompt = function(message, placeholder, title, btnArray, callback, type) {
+		if (typeof message === 'undefined') {
+			return;
+		} else {
+			if (typeof placeholder === 'function') {
+				callback = placeholder;
+				type = title;
+				placeholder = null;
+				title = null;
+				btnArray = null;
+			} else if (typeof title === 'function') {
+				callback = title;
+				type = btnArray;
+				title = null;
+				btnArray = null;
+			} else if (typeof btnArray === 'function') {
+				type = callback;
+				callback = btnArray;
+				btnArray = null;
+			}
+		}
+		return createPopup(createInner(message, title || '提示', createInput(placeholder)) + createButtons(btnArray || ['取消', '确认']), callback);
+	};
+
+	$.fn.closepopup = $.closepopup = function(){
+		if (popupStack.length) {
+			popupStack[popupStack.length - 1]['close']();
+			return true;
+		} else {
+			return false;
+		}
+	};
+	$.fn.closepopups = $.closepopups = function(){
+		while (popupStack.length) {
+			popupStack[popupStack.length - 1]['close']();
+		}
+	};
+
+}(window.Zepto);
+
+$(function(){
+	function valid($form) {
+		var valid = true;
+		if (valid) {
+			$('[data-require]', $form).each(function(){
+				if ($(this).val() == '') {
+					$.alert($(this).data('require'));
+					valid = false;
+					return false;
+				}
+			});
+		}
+		
+		return valid;
+	}
+	
+	$('[data-form]').on($.EVENT_CLICK, function(e) {
+		var $this = $('form[name=' + $(this).data('form') + ']');
+		var $btn = $(this);
+		var data = $this.serialize();
+		if (!valid($this) || $btn.prop('disabled')) return false;
+		
+		$btn.prop('disabled', true);
+		$.ajax({
+			url: $this.attr('action'),
+			type: 'POST',
+			dataType: 'json',
+			data: data,
+			success: function(data) {
+				if (data.retCode == 1) {
+					if (data.retUrl) window.location.href = data.retUrl;
+					if (data.retDesc) $.alert(data.retDesc);
+				} else {
+					$.alert(data.retDesc);
+				}
+				$btn.prop('disabled', false);
+			},
+			error: function() {
+				$btn.prop('disabled', false);
+			}
+		});
+	});
+});
+
+$(function(){
+	$('[data-iscredit]').click(function(){
+		$('[data-iscredit]').removeClass('active');
+		$(this).addClass('active');
+		$('[name="info[iscredit]"]').val($(this).data('iscredit'));
+	});
+	$('[data-income]').click(function(){
+		$('[data-income]').removeClass('active');
+		$(this).addClass('active');
+		$('[name="info[income]"]').val($(this).data('income'));
+	});
+	$('[data-instype]').click(function(){
+		$('[data-instype]').removeClass('active');
+		$(this).addClass('active');
+		$('[name="info[instype]"]').val($(this).data('instype'));
+	});
+	$('[data-gender]').click(function(){
+		$('[data-gender]').removeClass('active');
+		$(this).addClass('active');
+		$('[name="info[gender]"]').val($(this).data('gender'));
+	});
+});
+
+//获取验证码
+$(function(){
+	var time = 60;
+	var countdown = function(obj){
+		if (time == 0) {
+			obj.prop('disabled', '');
+			obj.text('重新发送');
+			time = 60;
+		} else {
+			obj.prop('disabled', 'disabled');
+			obj.text("(" + time + "s)");
+			time--;
+			setTimeout(function() {
+				countdown(obj)
+			}, 1000)
+		}
+	};
+
+	$('button[name=getcode]').on($.EVENT_CLICK, function(){
+		var mobile = $('[name="info[mobile]"]');
+        var $this = $(this);
+		if ($this.prop('disabled')) return false;
+		if (!mobile.val()) {
+			$.PageDialog.fail('请输入手机号码');
+        } else {
+            $.post('getsms.php', {'mobile': mobile.val()}, function(data){
+                if(data.retCode == 1) {
+                    countdown($this);
+                } else {
+					$.PageDialog.ok(data.retDesc);
+                }
+            }, 'json');
+        }
+	})
+});
+</script>
+
+<link href="css/picker.css" rel="stylesheet" />
+<script src="js/dtpicker.js"></script>
+<script src="js/picker.js"></script>
+<script>
+$(function(){
+	$('[data-dtpicker]').each(function(){
+		var me = $(this);
+		me.on($.EVENT_CLICK, function(){
+			var options = me.data('options') || {};
+			var picker = new $.DtPicker(options);
+			picker.show(function(rs) {
+				me.val(rs.text);
+				picker.dispose();
+			});
+		})
+	})
+});
+</script>
+
+
+	<script type="text/javascript" src="js/city.js"></script>
+	<script type="text/javascript" src="js/picker.min.js"></script>
+	<script type="text/javascript" src="js/index.js?v=3"></script>
+
+
+<div style="display:none">
+	<script src="http://s4.cnzz.com/stat.php?id=1260977035&web_id=1260977035" language="JavaScript"></script>
+</div>
+
+
+<div class="layer-box" id="layer-pendant">
+	<div class="layer-content" style="height: auto;">
+		<a href="javascript:;" class="close" title="关闭">×</a>
+		<div class="layer-title">
+			<h3>平安畅行天下升级版意外保障，祝您出行无忧！</h3>
+		</div><!-- end .layer-title -->
+		<div class="layer-main">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody><tr>
+					<th width="50%">可享受的保障权益</th>
+					<th width="24%">保障额度</th>
+					<th width="24%">保障期限</th>
+				</tr>
+				<tr>
+					<td>飞机意外伤害身故、残疾  </td>
+					<td>100万</td>
+					<td rowspan="6">180天<img src="http://images.vrm.cn/2016418152924_wap_layer_yz.png" class="table_bg"></td>
+				</tr>
+				<tr>
+					<td>火车/地铁/轻轨意外伤害身故、残疾</td>
+					<td>50万</td>
+				</tr>
+				<tr>
+					<td>轮船意外伤害身故、残疾</td>
+					<td>50万</td>
+				</tr>
+				<tr>
+					<td>商业运营汽车意外伤害身故、残疾 </td>
+					<td>10万</td>
+				</tr>
+				<tr>
+					<td>商业交通工具意外伤害医疗 </td>
+					<td>2万</td>
+				</tr>
+				<tr>
+					<td>行李物品和旅行证件损失</td>
+					<td>500元</td>
+				</tr>
+			</tbody></table>
+			
+		</div><!-- end .layer-main -->
+		<div class="terms">
+			温馨提示：本赠险产品具体事项可参照<a href="#" class="know">投保须知</a>，并遵循<a href="http://images.vrm.cn/2017/03/03/平安交通工具意外伤害保险条款.pdf" title="中国平安" target="_blank">《平安交通工具意外伤害保险条款》</a>、<a href="http://images.vrm.cn/2017/03/03/平安旅行附加行李物品和旅行证件损失保险条款.pdf" title="中国平安" target="_blank">《平安旅行附加行李物品和旅行证件损失保险条款》</a>同意领取即表示同意<a href="#" class="safety">信息安全条款</a>
+		</div>
+	</div><!-- end .layer-content -->
+</div>
+<div class="layer-backdrop"></div>
+<a href="javascript:;" class="a-pendant">赠险详情</a>
+<script>
+$(function(){
+	$('.a-pendant').click(function(){
+		$('#layer-pendant,.layer-backdrop').show();
+	});
+	
+	$('#layer-pendant .close').click(function(){
+		$('#layer-pendant,.layer-backdrop').hide();
+	});
+});
+</script>
+<style>
+.layer-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.7);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#59000000,endColorstr=#59000000)
+}
+.layer-backdrop {
+	z-index: 1000;
+	display: none;
+}
+
+.layer-open {
+	overflow: hidden
+}
+
+.layer-box {
+	z-index: 1001;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	text-align: center;
+	-webkit-overflow-scrolling: touch;
+	padding: 10px 10px 0;
+	display: none;
+}
+
+.layer-box:after {
+	display: inline-block;
+	height: 100%;
+	margin-left: -.05em;
+	content: "";
+	vertical-align: middle
+}
+
+.layer-content {
+	position: relative;
+	outline: 0;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	
+	padding: 35px 15px;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	color: #2b2e38;
+	background: #fff;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 4px;
+	top: 30px;
+}
+
+.a-pendant {
+	background: url(http://images.vrm.cn/assets/pingan_beibao_20160802/pc_icon.png) no-repeat;
+	background-size: 36px auto;
+	display: block;
+	width: 36px;
+	height: 73px;
+	text-indent: -9999em;
+	position: fixed;
+	top: 350px;
+	right: 0;
+}
+
+.layer-content {
+	
+}
+
+.layer-content.layer-padding {
+	padding: 23px 0
+}
+
+.layer-content.layer-radius {
+	border-radius: 8px;
+	padding: 0
+}
+
+.layer-content.layer-radius .close {
+	background: 0;
+	color: #fff;
+	filter: alpha(opacity=60);
+	opacity: .6;
+	right: 10px;
+	top: 13px
+}
+
+.layer-content .layer-main-2 .icon {
+	background-image: url(http://images.vrm.cn/assets/pingan_beibao_20160802/pc_spirte.png);
+	background-repeat: no-repeat
+}
+
+.layer-content .close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	width: 30px;
+	height: 30px;
+	color: #9e9e9e;
+	font-size: 28px;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer
+}
+
+.layer-content .layer-title {
+	text-align: center;
+	margin-bottom: 29px
+}
+
+.layer-content .layer-title h3 {
+	color: #e3664a;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.layer-content .layer-main {
+	position: relative
+}
+
+.layer-content .layer-main th,.layer-content .layer-main td {
+	/*
+	font-size: 12px;
+	padding: 20px 0;
+	text-align: center
+	*/
+	
+	font-size: 1.1rem;
+    padding: 1rem 0;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.layer-content .layer-main th {
+	background: #e3664a;
+	color: #fff
+}
+
+.layer-content .layer-main td {
+	background: #faf9f4;
+	color: #7e7e7e
+}
+
+.layer-content .layer-main .table_bg {
+	position: absolute;
+	bottom: -28px;
+	right: -22px
+}
+
+.layer-content .layer-title-2 h3 {
+	font-size: 30px;
+	color: #f65800;
+	padding-bottom: 10px
+}
+
+.layer-content .layer-title-2 p {
+	color: #522718;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: left
+}
+
+.layer-content .layer-title-2 p span {
+	color: #f65800
+}
+
+.layer-content .layer-title-3 {
+	border-bottom: 1px solid #f57a3f;
+	text-align: left;
+	padding-left: 7px
+}
+
+.layer-content .layer-title-3 span {
+	color: #f3590f;
+	font-weight: bold;
+	font-size: 30px
+}
+
+.layer-content .layer-main-2 {
+	position: relative;
+	text-align: left;
+	margin: 10px 7px
+}
+
+.layer-content .layer-main-2 .warn {
+	color: #724e41;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 10px;
+	line-height: 20px
+}
+
+.layer-content .layer-main-2 .font {
+	float: left;
+	margin-top: 25px
+}
+
+.layer-content .layer-main-2 .font dt,.layer-content .layer-main-2 .font dd {
+	color: #46190c;
+	font-size: 16px;
+	line-height: 1.8
+}
+
+.layer-content .layer-main-2 .font dt {
+	font-weight: bold
+}
+
+.layer-content .layer-main-2 .font dd span {
+	color: #f3590f
+}
+
+.layer-content .layer-main-2 .font dd em {
+	font-style: normal
+}
+
+.layer-content .layer-main-2 .goods {
+	float: right;
+	margin-right: 60px;
+	margin-bottom: 10px
+}
+
+.layer-content .layer-main-2 .icon {
+	display: block
+}
+
+.layer-content .layer-main-2 .icon.icon-1 {
+	background-position: -68px 0;
+	width: 181px;
+	height: 111px
+}
+
+.layer-content .layer-main-2 .icon.icon-2 {
+	background-position: -68px -113px;
+	width: 194px;
+	height: 106px
+}
+
+.layer-content .layer-main-2 .icon.icon-3 {
+	background-position: -68px -221px;
+	width: 200px;
+	height: 135px
+}
+
+.layer-content .layer-main-2 .icon.icon-4 {
+	background-position: -251px 0;
+	width: 181px;
+	height: 111px
+}
+
+.layer-content .layer-main-2 .icon.icon-5 {
+	background-position: -278px -113px;
+	width: 164px;
+	height: 106px
+}
+
+.layer-content .layer-main-2 .layer-img {
+	background: url(http://images.vrm.cn/assets/pingan_beibao_20160802/pc_layer_img.jpg) no-repeat;
+	width: 435px;
+	height: 232px;
+	margin-top: 20px
+}
+
+.layer-content .layer-main-2 .layer-img p {
+	color: #000;
+	font-size: 30px;
+	line-height: 1.5;
+	text-align: center;
+	padding-top: 65px
+}
+
+.layer-content .layer-title-4 {
+	background: #f45b11;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	padding: 1.15rem 0
+}
+
+.layer-content .layer-title-4 span {
+	background: url(http://images.vrm.cn/assets/pingan_beibao_20160802/pc_icon_2.png) no-repeat;
+	width: 186px;
+	height: 125px;
+	display: inline-block;
+	margin-bottom: 10px
+}
+
+.layer-content .layer-title-4 p {
+	color: #fff;
+	font-size: 24px;
+	line-height: 1.5
+}
+
+.layer-content .layer-main-3 {
+	text-align: left;
+	padding: 41px 7px 66px
+}
+
+.layer-content .layer-main-3 .txt-1 {
+	color: #666;
+	font-size: 18px;
+	text-align: center;
+	padding-bottom: 30px
+}
+
+.layer-content .layer-main-3 ul {
+	margin-bottom: 60px;
+	width: 90%;
+	margin-left: 60px
+}
+
+.layer-content .layer-main-3 li {
+	border-left: 1px solid #d2d2d2;
+	float: left;
+	padding-left: 25px;
+	padding-right: 25px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+.layer-content .layer-main-3 li:first-child {
+	border-left: none;
+	padding-left: 0
+}
+
+.layer-content .layer-main-3 li span {
+	color: #9c9c9c;
+	font-size: 16px
+}
+
+.layer-content .layer-main-3 li p {
+	color: #f3590f;
+	font-size: 24px;
+	padding-top: 20px
+}
+
+.layer-content .layer-main-3 li p strong {
+	font-weight: normal;
+	font-size: 30px
+}
+
+.layer-content .layer-main-4 {
+	padding: 24px 48px 30px
+}
+
+.layer-content .layer-main-4 th {
+	color: #9c9c9c;
+	font-size: 16px;
+	padding-bottom: 18px
+}
+
+.layer-content .layer-main-4 th.th-1 {
+	text-indent: 18px;
+	width: 51%
+}
+
+.layer-content .layer-main-4 th.th-2 {
+	text-align: right
+}
+
+.layer-content .layer-main-4 td {
+	border-bottom: 1px solid #d2d2d2;
+	color: #471909;
+	font-size: 16px;
+	padding: 9px 0
+}
+
+.layer-content .layer-main-4 td span {
+	border: 1px solid #f3590f;
+	border-radius: 2px;
+	color: #f3590f;
+	font-size: 14px;
+	display: inline-block;
+	padding: 5px;
+	margin-left: 8px
+}
+
+.layer-content .layer-main-4 td.td-2 {
+	color: #f65800;
+	text-align: left
+}
+
+.layer-content .layer-main-4 .txt {
+	color: #9c9c9c;
+	font-size: 14px;
+	padding-top: 24px
+}
+
+.layer-content .layer-main-4 .btn-cont {
+	margin-top: 20px!important
+}
+
+.layer-content .btn-cont {
+	margin-top: 33px
+}
+
+.layer-content .btn-cont .btn-trial,.layer-content .btn-cont .btn-idoneity,.layer-content .btn-cont .btn-close {
+	background: #f3590f;
+	border: 0;
+	border-radius: 44px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+	width: 217px;
+	height: 44px
+}
+
+.layer-content .btn-cont .btn-trial:hover,.layer-content .btn-cont .btn-idoneity:hover,.layer-content .btn-cont .btn-close:hover {
+	background: #f7651f
+}
+
+.layer-content .btn-cont .btn-idoneity,.layer-content .btn-cont .btn-close {
+	border-radius: 64px;
+	font-size: 28px;
+	width: 286px;
+	height: 64px
+}
+
+.layer-feature {
+	padding-top: 50px;
+	color: #471909
+}
+
+.layer-feature .feature-title {
+	font-size: 18px;
+	font-weight: 600
+}
+
+.layer-feature ul {
+	text-align: left;
+	padding-left: 86px
+}
+
+.layer-feature h4,.layer-feature p {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 28px
+}
+
+.layer-trial-cont {
+	height: 364px;
+	border: 1px solid #471b06;
+	border-radius: 8px;
+	margin-top: 86px
+}
+
+.layer-trial-cont .trial-txt {
+	width: 264px;
+	height: 50px;
+	border-radius: 10px;
+	border: 1px solid #471b06;
+	font-size: 18px;
+	color: #471b06;
+	line-height: 50px;
+	margin: 0 auto;
+	margin-top: -25px;
+	background: #fff
+}
+
+#layer-update .layer-content {
+	width: 644px!important;
+	border: 1px solid #a07908;
+	padding: 60px 72px 50px
+}
+
+.layer-trial {
+	background: #fff;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 42px;
+	position: relative
+}
+
+.layer-trial h3 {
+	color: #f3590f;
+	font-weight: bold;
+	font-size: 30px;
+	padding-top: 20px
+}
+
+.layer-trial .trial-main {
+	width: 398px;
+	margin: 0 auto;
+	margin-bottom: 13px
+}
+
+.layer-trial .form-inner {
+	font-size: 0;
+	text-align: left;
+	margin-top: 13px
+}
+
+.layer-trial .form-inner:first-child {
+	margin-top: 0
+}
+
+.layer-trial .form-inner.form-nover {
+	overflow: inherit
+}
+
+.layer-trial .form-inner .form-title {
+	color: #471b06;
+	font-size: 18px;
+	width: 122px;
+	text-align: center
+}
+
+.layer-trial .form-inner .form-title i {
+	display: inline-block;
+	width: 36px
+}
+
+.layer-trial .form-inner .form-title,.layer-trial .form-inner input[type="text"],.layer-trial .form-inner .form-sex,.layer-trial .form-inner .form-way,.layer-trial .form-inner .amount-context {
+	display: inline-block;
+	vertical-align: middle
+}
+
+.layer-trial .form-inner input[type="text"] {
+	border: 1px solid #45190e;
+	color: #292828;
+	font-size: 18px;
+	width: 260px;
+	height: 42px;
+	line-height: 42px\9;
+	padding: 0 5px
+}
+
+.layer-trial .form-inner input[type="text"].trial-birthday {
+	width: 143px;
+	margin-right: 12px
+}
+
+.layer-trial .form-inner input[type="text"].trial-birthday,.layer-trial .form-inner input[type="text"].input-amount {
+	background: url(http://images.vrm.cn/assets/pingan_beibao_20160802/pc_select_icon.png) no-repeat 94% center
+}
+
+.layer-trial .form-inner .trial-birthday,.layer-trial .form-inner .form.sex {
+	vertical-align: top!important
+}
+
+.layer-trial .form-inner .form-sex {
+	font-size: 0
+}
+
+.layer-trial .form-inner .sex-label,.layer-trial .form-inner .way-label {
+	cursor: pointer;
+	display: inline-block;
+	width: 46px;
+	height: 42px;
+	line-height: 42px;
+	position: relative
+}
+
+.layer-trial .form-inner .sex-label input,.layer-trial .form-inner .way-label input {
+	position: absolute;
+	filter: alpha(opacity=0);
+	opacity: 0
+}
+
+.layer-trial .form-inner .sex-label span,.layer-trial .form-inner .way-label span {
+	border: 1px solid #45190e;
+	color: #292828;
+	font-size: 16px;
+	display: block;
+	text-align: center
+}
+
+.layer-trial .form-inner .sex-label.current,.layer-trial .form-inner .way-label.current {
+	z-index: 2
+}
+
+.layer-trial .form-inner .sex-label.current span,.layer-trial .form-inner .way-label.current span {
+	background: #ed6c00;
+	border-color: #ed6c00;
+	color: #fff
+}
+
+.layer-trial .form-inner .sex-label.female,.layer-trial .form-inner .way-label.female {
+	left: -1px
+}
+
+.layer-trial .form-inner .way-label {
+	width: 122px
+}
+
+.layer-trial .form-inner .way-label span {
+	border-radius: 44px
+}
+
+.layer-trial .form-inner .way-label.year-way {
+	margin-left: 12px
+}
+
+.layer-trial .form-inner .hosp-benefit {
+	width: 112px;
+	height: 44px;
+	border: 1px solid #000;
+	margin-top: -46px;
+	margin-left: 261px;
+	font-size: 15px;
+	text-align: center;
+	line-height: 21px
+}
+
+.layer-trial .form-inner .amount-context {
+	border: 1px solid #45190e;
+	cursor: pointer;
+	position: relative
+}
+
+.layer-trial .form-inner .amount-context .amount {
+	border: 0;
+	background: url(http://images.vrm.cn/assets/pingan_beibao_20160802/pc_select_icon.png) no-repeat 94% center;
+	width: 118px;
+	height: 44px;
+	line-height: 44px;
+	text-indent: 5px
+}
+
+.layer-trial .form-inner .amount-context .selector_name {
+	color: #292828;
+	font-size: 16px;
+	height: 44px;
+	line-height: 44px
+}
+
+.layer-trial .form-inner .amount-context .selector_name.select_default_color {
+	color: #999
+}
+
+.layer-trial .form-inner .amount-context .selector_list {
+	border: 1px solid #bebebe;
+	border-top: 0;
+	top: 44px;
+	left: -1px
+}
+
+.layer-trial .form-inner .amount-context .selector_list li {
+	cursor: pointer
+}
+
+.layer-trial .form-inner.tc {
+	text-align: center
+}
+
+.layer-trial .form-inner button {
+	border: 0;
+	background: #f05a24;
+	border-radius: 57px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 25px;
+	width: 274px;
+	height: 57px;
+	margin-top: 7px;
+	margin-bottom: 15px
+}
+
+.layer-trial .form-inner button:hover {
+	background: #f9780c
+}
+
+.layer-trial .form-inner .validate-message {
+	color: #d80000;
+	font-size: 14px;
+	position: absolute;
+	padding-top: 2px
+}
+
+.layer-trial .layer-phone p {
+	line-height: 1.4
+}
+
+.layer-trial .layer-phone .txt-1 {
+	color: #471909;
+	font-size: 14px
+}
+
+.layer-trial .layer-phone i,.layer-trial .layer-phone span {
+	display: inline-block;
+	vertical-align: middle
+}
+
+.layer-trial .layer-phone i {
+	background: url(http://images.vrm.cn/assets/pingan_beibao_20160802/pc_lpone_icon.png) no-repeat;
+	width: 22px;
+	height: 22px;
+	margin-top: -5px
+}
+
+.layer-trial .layer-phone span {
+	color: #f05a23;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: Arial
+}
+
+.layer-trial .layer-phone #time {
+	color: #471909;
+	font-size: 14px;
+	font-weight: normal;
+	font-family: "Microsoft YaHei";
+	margin-top: -4px
+}
+
+.layer-ensure {
+	border: 1px solid #a07908;
+	border-radius: 8px;
+	margin-top: 20px;
+	box-shadow: 2px 2px #e2e1e1
+}
+
+.layer-ensure h2 {
+	width: 264px;
+	height: 50px;
+	border-radius: 10px;
+	border: 1px solid #471b06;
+	font-size: 18px;
+	color: #471b06;
+	line-height: 50px;
+	margin: 0 auto;
+	margin-top: -25px;
+	background: #fff;
+	text-align: center
+}
+
+.layer-ensure .ly-ensure-main {
+	padding: 15px 45px 32px
+}
+
+.layer-ensure th {
+	width: 51%
+}
+
+.layer-ensure th,.layer-ensure td {
+	color: #46190c;
+	border-bottom: 1px solid #ddd3db;
+	font-size: 16px;
+	line-height: 2
+}
+
+.layer-ensure th span,.layer-ensure td span {
+	color: #f3590f
+}
+
+.terms a {
+	color: #f9634b;
+	text-decoration: underline;
+}
+</style>
+</body>
+</html>
